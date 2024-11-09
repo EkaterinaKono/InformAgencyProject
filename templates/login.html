@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Регистрация</title>
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="static/style.css">
+<div class="container">
+    <h3>Вход</h3>
+    {%for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{cat}}">{{msg}}</div>
+    {% endfor %}
+    <form class="form-signin" method="post" action="login">
+        {{ form.hidden_tag() }}
+        <p>{{ form.username(placeholder="Введите логин") }}<p>
+        <p>{{ form.password(placeholder="Введите пароль") }}<p>
+        <p>{{ form.remember() }}   {{ form.remember.label() }}<p>
+        <button class="btn btn-outline-primary" type="submit">Вход</button>
+
+    </form>
+</div>
+{% endblock %}

@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+<title>MOEX API</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+      <div class="form-group">
+          <h4 class="page-header" align="center">Добро пожаловать, {{ name }}!</h4><br>
+          <h5> {{username}}, для просмотра графиков заполните форму</h5><br>
+            <form id="dataForm">
+                <label for="securityType">Выберите вид бумаг: </label>
+                    <select id="securityType" name="securityType" required>
+                        <option value="">Выбрать</option>
+                        <option value="TQBR">Акции</option>
+                        <option value='TQCB'>Корпоративные облигации</option>
+                        <option value="TQOB">ОФЗ</option>
+                    </select><br><br>
+
+                <label for="stock_symbol">Укажите код бумаги:</label>
+                <input type="text" id="stock_symbol" name="stock_symbol" required><br><br>
+                <label for="firstDate">Период с: </label>
+                <input type="date" id="firstDate" name="firstDate" required><br><br>
+
+                <label for="lastDate">По: </label>
+                <input type="date" id="lastDate" name="lastDate" required><br><br>
+
+                <button type="submit" class="btn btn-primary">Построить график</button>
+                <h2>{{ security_name }}</h2>
+            </form>
+            <div id="graph"></div>
+      </div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='script_moex_api.js') }}"></script>
+{% endblock %}

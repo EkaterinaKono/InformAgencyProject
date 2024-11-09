@@ -1,10 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Inform agency</title>
+{% endblock %}
+
+{% block body %}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Информационное агентство</h1>
+      <p class="lead">Информационная среда для профессионалов финансового рынка</p>
+    </div>
+
+    <div class="container">
+      {{ data }}
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">1 неделя</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">0 рублей</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Бесплатный доступ на 7 дней</li>
+              <li>к котировкам российских</li>
+              <li>акций, корпоративных облигаций</li>
+              <li>и ОФЗ</li>
+            </ul>
+            <a style="text-decoration: none" href="/register">
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Получить доступ</button>
+            </a>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">3 месяца</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">5 000 рублей</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Доступ на 90 дней к котировкам</li>
+              <li>российских акций,</li>
+              <li>корпоративных облигаций</li>
+              <li>и ОФЗ</li>
+            </ul>
+            <a style="text-decoration: none" href="/register">
+            <button type="button" class="btn btn-lg btn-block btn-primary">Получить доступ</button>
+            </a>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">1 год</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">15 000 рублей</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Доступ на 1 год к котировкам</li>
+              <li>российских акций,</li>
+              <li>корпоративных облигаций и ОФЗ</li>
+              <li>Скидка 30% на дальнейшее продление</li>
+            </ul>
+            <a style="text-decoration: none" href="/register">
+            <button type="button"  class="btn btn-lg btn-block btn-primary" >Получить доступ</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
